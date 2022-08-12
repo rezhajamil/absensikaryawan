@@ -1,36 +1,48 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="referrer" content="always">
+    {{-- <link rel="canonical" href="{{ $page->getUrl() }}"> --}}
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta name="description" content="DUNIA DIGITAL SEKOLAH SUMUT">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <title>DUNIA DIGITAL SEKOLAH SUMUT </title>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="icon" href="{{ asset("images/logo-shape-text.png") }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/izmir.css') }}">
+    {{-- <link rel="icon" href="{{ asset('images/mosque.svg') }}"> --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/wow.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/b2ba1193ce.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        new WOW().init();
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
+    </script>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Telkomsel Batik';
+            /*memberikan nama bebas untuk font*/
+            src: url("{{ asset('font/TelkomselBatikSans-Bold.otf') }}");
+            /*memanggil file font eksternalnya di folder nexa*/
+        }
+
+        .font-batik {
+            font-family: 'Telkomsel Batik';
+        }
+
+    </style>
+</head>
+<body>
+    @yield('body')
+    @yield('script')
+</body>
 </html>

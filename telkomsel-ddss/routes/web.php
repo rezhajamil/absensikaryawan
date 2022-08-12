@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AmbassadorController;
+use App\Http\Controllers\EsportController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SpecialOfferController;
+use App\Http\Controllers\TheStageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::resource('/the_stage', TheStageController::class);
+Route::resource('/ambassador_digital', AmbassadorController::class);
+Route::resource('/special_offer', SpecialOfferController::class);
+Route::resource('/esport', EsportController::class);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
