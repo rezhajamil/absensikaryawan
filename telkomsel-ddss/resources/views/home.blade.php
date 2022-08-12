@@ -23,7 +23,7 @@
             </figcaption>
         </a>
         <a href="{{ route('ambassador_digital.index') }}" class="c4-izmir c4-border-ccc-3 c4-image-rotate-right c4-gradient-bottom-right group flex justify-center items-center h-52 md:h-96 hover:shadow-xl transition-all" tabindex="0" style="--primary-color: #B90027; --secondary-color: #021942; --image-opacity: .1;">
-            <div class="bg-[#EDF7F6] w-full h-full flex justify-center items-center group-hover:opacity-0 transition-all">
+            <div class="bg-white w-full h-full flex justify-center items-center group-hover:opacity-0 transition-all">
                 <span class="md:text-4xl text-xl text-sekunder inline-block font-bold text-center px-3">
                     AMBASSADOR DIGITAL
                 </span>
@@ -37,7 +37,7 @@
         <a href="{{ route('special_offer.index') }}" class="c4-izmir c4-border-cc-2 c4-image-rotate-right c4-gradient-bottom-right group flex justify-center items-center h-52 md:h-96 hover:shadow-xl transition-all" tabindex="0" style="--primary-color: #B90027; --secondary-color: #021942; --image-opacity: .1;">
 
 
-            <div class="bg-[#EDF7F6] w-full h-full flex justify-center items-center group-hover:opacity-0 transition-all">
+            <div class="bg-white w-full h-full flex justify-center items-center group-hover:opacity-0 transition-all">
                 <span class="md:text-4xl text-xl text-sekunder inline-block font-bold text-center px-3">
                     SPECIAL OFFERING ORBIT
                 </span>
