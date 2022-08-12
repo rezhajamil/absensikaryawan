@@ -12,11 +12,11 @@
     <div class="grid grid-cols-2 md:grid-cols-4 px-6 my-6 gap-x-4 gap-y-6">
         <a href="{{ route('the_stage.index') }}" class="c4-izmir c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom-right group flex justify-center items-center h-52 md:h-96" tabindex="0" style="--primary-color: #021942; --secondary-color: #B90027; --image-opacity: .1;">
             <div class="bg-sekunder w-full h-full flex justify-center items-center group-hover:opacity-0 transition-all">
-                <span class="md:text-4xl text-xl text-white inline-block font-bold text-center">
+                <span class="md:text-4xl text-xl text-white inline-block font-bold text-center px-3">
                     THE STAGE
                 </span>
             </div>
-            <figcaption class="c4-reveal-right">
+            <figcaption class="c4-reveal-right px-3">
                 <span class="md:text-4xl text-xl text-center w-fit font-bold">
                     DAFTAR SEKARANG
                 </span>
@@ -24,11 +24,11 @@
         </a>
         <a href="{{ route('ambassador_digital.index') }}" class="c4-izmir c4-border-ccc-3 c4-image-rotate-right c4-gradient-bottom-right group flex justify-center items-center h-52 md:h-96" tabindex="0" style="--primary-color: #021942; --secondary-color: #B90027; --image-opacity: .1;">
             <div class="bg-sekunder w-full h-full flex justify-center items-center group-hover:opacity-0 transition-all">
-                <span class="md:text-4xl text-xl text-white inline-block font-bold text-center">
+                <span class="md:text-4xl text-xl text-white inline-block font-bold text-center px-3">
                     AMBASSADOR DIGITAL
                 </span>
             </div>
-            <figcaption class="c4-reveal-right">
+            <figcaption class="c4-reveal-right px-3">
                 <span class="md:text-4xl text-xl text-center w-fit font-bold">
                     DAFTAR SEKARANG
                 </span>
@@ -36,11 +36,11 @@
         </a>
         <a href="{{ route('special_offer.index') }}" class="c4-izmir c4-border-cc-2 c4-image-rotate-right c4-gradient-bottom-right group flex justify-center items-center h-52 md:h-96" tabindex="0" style="--primary-color: #021942; --secondary-color: #B90027; --image-opacity: .1;">
             <div class="bg-sekunder w-full h-full flex justify-center items-center group-hover:opacity-0 transition-all">
-                <span class="md:text-4xl text-xl text-white inline-block font-bold text-center">
+                <span class="md:text-4xl text-xl text-white inline-block font-bold text-center px-3">
                     SPECIAL OFFERING ORBIT
                 </span>
             </div>
-            <figcaption class="c4-reveal-right">
+            <figcaption class="c4-reveal-right px-3">
                 <span class="md:text-4xl text-xl text-center w-fit font-bold">
                     DAFTAR SEKARANG
                 </span>
@@ -48,11 +48,11 @@
         </a>
         <a href="{{ route('esport.index') }}" class="c4-izmir c4-border-cc-1 c4-image-rotate-right c4-gradient-bottom-right group flex justify-center items-center h-52 md:h-96" tabindex="0" style="--primary-color: #021942; --secondary-color: #B90027; --image-opacity: .1;">
             <div class="bg-sekunder w-full h-full flex justify-center items-center group-hover:opacity-0 transition-all">
-                <span class="md:text-4xl text-xl text-white inline-block font-bold text-center">
+                <span class="md:text-4xl text-xl text-white inline-block font-bold text-center px-3">
                     ESPORT COMPETITION
                 </span>
             </div>
-            <figcaption class="c4-reveal-right">
+            <figcaption class="c4-reveal-right px-3">
                 <span class="md:text-4xl text-xl text-center w-fit font-bold">
                     DAFTAR SEKARANG
                 </span>
