@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<div class="py-4 my-6 bg-premier">
+<div class="py-4 my-6 bg-premier" x-data="{offer:false}">
     <span class="inline-block w-full my-4 text-4xl text-center text-white font-batik selection:bg-white selection:text-premier">PILIHAN KATEGORI</span>
     <div class="grid grid-cols-2 px-6 my-6 md:grid-cols-4 gap-x-4 gap-y-6">
         <a href="{{ route('the_stage.index') }}" class="flex items-center justify-center transition-all c4-izmir c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom-right group h-52 md:h-96 hover:shadow-xl" tabindex="0" style="--primary-color: #021942; --secondary-color: #B90027; --image-opacity: .1;">
@@ -36,7 +36,7 @@
                 </span>
             </figcaption>
         </a>
-        <a href="{{ route('special_offer.index') }}" class="flex items-center justify-center transition-all c4-izmir c4-border-cc-2 c4-image-rotate-right c4-gradient-bottom-right group h-52 md:h-96 hover:shadow-xl" tabindex="0" style="--primary-color: #B90027; --secondary-color: #021942; --image-opacity: .1;">
+        <a class="flex items-center justify-center transition-all c4-izmir c4-border-cc-2 c4-image-rotate-right c4-gradient-bottom-right group h-52 md:h-96 hover:shadow-xl" tabindex="0" style="--primary-color: #B90027; --secondary-color: #021942; --image-opacity: .1;" x-on:click="offer=!offer">
             <div class="flex flex-col items-center justify-center w-full h-full transition-all bg-white gap-y-4 md:gap-y-6 group-hover:opacity-0">
                 <i class="text-3xl md:text-6xl sm:text-4xl fa-solid fa-bullhorn text-sekunder"></i>
                 <span class="inline-block px-3 text-lg font-bold text-center md:text-4xl text-sekunder">
@@ -63,7 +63,18 @@
             </figcaption>
         </a>
     </div>
+    <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-white" x-show="offer" x-transition>
+        <i class="absolute z-10 text-3xl transition cursor-pointer text-premier fa-solid fa-xmark top-5 right-10 hover:text-sekunder" x-on:click="offer=false"></i>
+        <div class="flex flex-col w-full mx-4 overflow-hidden rounded-lg shadow-lg bg-premier sm:w-1/2">
+            <span class="inline-block w-full p-4 mb-4 text-lg font-bold text-center text-white capitalize">Dari mana asal anda?</span>
+            <div class="flex mx-auto my-4 gap-x-6">
+                <a href="{{ route('special_offer.index',['asal'=>'sekolah']) }}" class="px-4 py-2 text-white transition border-2 border-white bg-premier hover:bg-sekunder hover:border-sekunder">Sekolah</a>
+                <a href="{{ route('special_offer.index',['asal'=>'non_sekolah']) }}" class="px-4 py-2 text-white transition border-2 border-white bg-premier hover:bg-sekunder hover:border-sekunder">Sekolah</a>
+            </div>
+        </div>
+    </div>
 </div>
+
 @if (session('success'))
 <div class="flash-data d-none" data-flashdata="{{ session('success') }}"></div>
 <script>
