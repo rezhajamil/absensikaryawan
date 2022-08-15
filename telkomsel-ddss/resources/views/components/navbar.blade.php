@@ -1,7 +1,9 @@
-<div class="w-full flex px-4 py-6 bg-premier shadow-md shadow-tersier md:justify-start justify-between items-center">
-    <a class="flex items-center gap-x-4 h-10 md:h-16" href="/">
-        <img src="{{ asset('images/logo-gubernur.svg') }}" alt="Pemkot Medan" class="h-full">
-        <img src="{{ asset('images/white.png') }}" alt="Telkomsel" class="h-3/4">
+<div class="flex items-center justify-between w-full px-4 py-6 shadow-md bg-premier shadow-tersier">
+    <a class="flex items-center h-10 gap-x-4 md:h-16" href="/">
+        <img src="{{ asset('images/logo-gubernur.svg') }}" alt="Pemkot Medan" class="z-10 h-full">
     </a>
-    <span class="inline-block md:w-full text-center font-bold text-white text-xs w-1/2 md:text-3xl font-batik">DUNIA DIGITAL SEKOLAH SUMUT</span>
+    <a class="flex items-center h-10 gap-x-4 md:h-16" href="/">
+        <img src="{{ asset('images/white.png') }}" alt="Telkomsel" class="z-10 h-3/4">
+    </a>
+    <span class="inline-block w-1/2 text-xs font-bold text-center text-white sm:w-full md:text-3xl sm:text-xl font-batik sm:absolute selection:bg-white selection:text-premier">DUNIA DIGITAL SEKOLAH SUMUT</span>
 </div>
