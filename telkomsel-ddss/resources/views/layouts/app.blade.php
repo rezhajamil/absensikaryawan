@@ -19,13 +19,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/wow.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/b2ba1193ce.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-        new WOW().init();
-
-    </script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
 
     <style type="text/css">
         @font-face {
@@ -41,7 +37,7 @@
 
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
     @yield('body')
     @yield('script')
 </body>
