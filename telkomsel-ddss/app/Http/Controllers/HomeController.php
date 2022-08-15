@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -80,5 +81,13 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function find_school(Request $request)
+    {
+        $name = $request->name;
+        $sekolah = DB::table('Data_Sekolah_Sumatera')->select(['NPSN', 'NAMA_SEKOLAH'])->where('PROVINSI', 'Sumatera Utara')->where('NAMA_SEKOLAH', 'like', '%' . $name . '%')->orderBy('NAMA_SEKOLAH')->get();
+
+        return response()->json($sekolah);
     }
 }

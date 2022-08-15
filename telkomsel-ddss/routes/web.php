@@ -25,4 +25,6 @@ Route::resource('/ambassador_digital', AmbassadorController::class);
 Route::resource('/special_offer', SpecialOfferController::class);
 Route::resource('/esport', EsportController::class);
 
+Route::post('/find_school', [HomeController::class, 'find_school']);
+
 require __DIR__ . '/auth.php';

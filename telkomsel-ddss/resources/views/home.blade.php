@@ -64,4 +64,30 @@
         </a>
     </div>
 </div>
+@if (session('success'))
+<div class="flash-data d-none" data-flashdata="{{ session('success') }}"></div>
+<script>
+    var data = document.querySelector(".flash-data").getAttribute("data-flashdata");
+    Swal.fire({
+        title: 'Pendaftaran Berhasil'
+        , text: data
+        , icon: 'success'
+        , showCancelButton: false
+    , })
+
+</script>
+@endif
+@if (session('error'))
+<div class="flash-data d-none" data-flashdata="{{ session('error') }}"></div>
+<script>
+    var data = document.querySelector(".flash-data").getAttribute("data-flashdata");
+    Swal.fire({
+        title: 'Pendaftaran Gagal'
+        , text: data
+        , icon: 'error'
+        , showCancelButton: false
+    , })
+
+</script>
+@endif
 @endsection

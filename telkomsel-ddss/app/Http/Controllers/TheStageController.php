@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TheStageController extends Controller
 {
@@ -34,7 +35,34 @@ class TheStageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'npsn' => 'required|numeric',
+            'nama' => 'required',
+            'kelas' => 'required',
+            'jenis' => 'required',
+            'telp' => 'required|numeric|digits_between:11,13',
+            'wa' => 'required|numeric|digits_between:11,13',
+            'url' => 'required|url',
+        ]);
+
+        $count = DB::table('peserta_event')->where('telp', $request->telp)->where('kategori', 'The Stage')->count();
+
+        if ($count > 0) {
+            return redirect('/')->with('error', 'Anda Sudah Mendaftar di The Stage');
+        } else {
+            $stage = DB::table('peserta_event')->insert([
+                'npsn' => $request->npsn,
+                'nama' => $request->nama,
+                'kelas' => $request->kelas,
+                'jenis' => $request->jenis,
+                'telp' => $request->telp,
+                'wa' => $request->wa,
+                'youtube' => $request->url,
+                'kategori' => 'The Stage',
+            ]);
+
+            return redirect('/')->with('success', 'Anda Berhasil Mendaftar di The Stage');
+        }
     }
 
     /**

@@ -6,12 +6,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="referrer" content="always">
     {{-- <link rel="canonical" href="{{ $page->getUrl() }}"> --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <meta name="description" content="DUNIA DIGITAL SEKOLAH SUMUT">
 
     <title>DUNIA DIGITAL SEKOLAH SUMUT </title>
-
-    <link rel="icon" href="{{ asset("images/logo-shape-text.png") }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/izmir.css') }}">
     {{-- <link rel="icon" href="{{ asset('images/mosque.svg') }}"> --}}
@@ -22,6 +21,7 @@
     <script src="https://kit.fontawesome.com/b2ba1193ce.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style type="text/css">
         @font-face {

@@ -13,7 +13,7 @@ class AmbassadorController extends Controller
      */
     public function index()
     {
-        //
+        return view('ambassador.index');
     }
 
     /**

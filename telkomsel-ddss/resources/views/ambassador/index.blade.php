@@ -6,63 +6,49 @@
         <div class="absolute inset-0 flex items-center justify-center w-full h-full transition opacity-0 bg-slate-800/70 group-hover:opacity-100">
             <i class="text-4xl text-white fa-solid fa-up-right-and-down-left-from-center"></i>
         </div>
-        <img src="{{ asset('images/banner-stage.png') }}" alt="Banner Stage" class="object-contain w-full">
+        <img src="{{ asset('images/banner-ambassador.png') }}" alt="Banner Ambassador" class="object-contain w-full">
     </div>
     <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-black/80" x-show="banner" x-transition>
-        <i class="absolute z-10 text-3xl text-white transition cursor-pointer fa-solid fa-xmark top-5 right-10 hover:text-premier" x-on:click="banner=false"></i>
-        <img src="{{ asset('images/banner-stage.png') }}" alt="Banner Stage" class="relative w-full px-4 py-8 sm:py-4 sm:h-full h-fit aspect-auto">
+        <i class="absolute z-10 text-3xl text-white transition cursor-pointer aspect-auto fa-solid fa-xmark top-5 right-10 hover:text-premier" x-on:click="banner=false"></i>
+        <img src="{{ asset('images/banner-ambassador.png') }}" alt="Banner Stage" class="relative w-full px-4 py-8 sm:py-4 sm:h-full h-fit aspect-auto">
     </div>
     <div class="px-2 py-4 my-4 border-2 rounded-lg shadow-lg sm:px-6 sm:py-8 border-sekunder">
         <span class="text-2xl font-bold sm:text-4xl text-sekunder">Form Pendaftaran</span>
-        <form action="{{ route('the_stage.store') }}" method="post">
+        <form action="{{ route('ambassador_digital.store') }}" method="post">
             @csrf
-            <div class="grid grid-cols-1 gap-6 mt-4 md:grid-cols-2">
-                <div class="w-full">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="npsn" placeholder="NPSN" type="number" name="npsn" value="{{ old('npsn') }}">
+            <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-3">
+                <div>
+                    <input class="w-full border-2 rounded form-input outline-2 outline-sekunder ring-sekunder border-sekunder" id="npsn" placeholder="NPSN" type="number" name="npsn" value="{{ old('npsn') }}">
                     <span class="inline-block mt-1 text-sm underline transition-all cursor-pointer text-sekunder hover:text-black" x-on:click="search=!search"><i class="mr-1 text-sm fa-solid fa-magnifying-glass text-sekunder"></i>Cari Sekolah</span>
                     @error('npsn')
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="w-full">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Lengkap" type="text" name="nama" value="{{ old('nama') }}">
+                <div>
+                    <input class="w-full border-2 rounded form-input outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Lengkap" type="text" name="nama" value="{{ old('nama') }}">
                     @error('nama')
                     <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="w-full">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="kelas" placeholder="Kelas" type="text" name="kelas" value="{{ old('kelas') }}">
+                <div>
+                    <input class="w-full border-2 rounded form-input outline-2 outline-sekunder ring-sekunder border-sekunder" id="kelas" placeholder="Kelas" type="text" name="kelas" value="{{ old('kelas') }}">
                     @error('kelas')
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="w-full">
-                    <select name="jenis" id="jenis" class="w-full rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
-                        <option value="" selected disabled>Pilih Jenis Lomba</option>
-                    </select>
-                    @error('jenis')
-                    <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="w-full">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
-                    @error('telp')
-                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="w-full">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
-                    @error('wa')
-                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="w-full col-span-full">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Link Youtube" type="text" name="url" value="{{ old('url') }}">
-                    @error('url')
-                    <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-4 col-span-full">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 col-span-full">
+                    <div>
+                        <input class="w-full border-2 rounded form-input outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
+                        @error('telp')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div>
+                        <input class="w-full border-2 rounded form-input outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
+                        @error('wa')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
                 <button type="submit" class="col-span-3 px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>
             </div>
