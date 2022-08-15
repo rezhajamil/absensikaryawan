@@ -13,7 +13,7 @@
         <a href="{{ route('the_stage.index') }}" class="flex items-center justify-center transition-all c4-izmir c4-border-cc-3 c4-image-rotate-right c4-gradient-bottom-right group h-52 md:h-96 hover:shadow-xl" tabindex="0" style="--primary-color: #021942; --secondary-color: #B90027; --image-opacity: .1;">
             <div class="flex flex-col items-center justify-center w-full h-full transition-all gap-y-4 md:gap-y-6 bg-sekunder group-hover:opacity-0">
                 <i class="text-3xl md:text-6xl sm:text-4xl fa-solid fa-microphone-lines"></i>
-                <span class="inline-block px-3 text-xl font-bold text-center text-white md:text-4xl">
+                <span class="inline-block px-3 text-lg font-bold text-center text-white md:text-4xl">
                     THE STAGE
                 </span>
             </div>
@@ -26,7 +26,7 @@
         <a href="{{ route('ambassador_digital.index') }}" class="flex items-center justify-center transition-all c4-izmir c4-border-ccc-3 c4-image-rotate-right c4-gradient-bottom-right group h-52 md:h-96 hover:shadow-xl" tabindex="0" style="--primary-color: #B90027; --secondary-color: #021942; --image-opacity: .1;">
             <div class="flex flex-col items-center justify-center w-full h-full transition-all bg-white gap-y-4 md:gap-y-6 group-hover:opacity-0">
                 <i class="text-3xl md:text-6xl sm:text-4xl fa-solid fa-image-portrait text-sekunder"></i>
-                <span class="inline-block px-3 text-xl font-bold text-center md:text-4xl text-sekunder">
+                <span class="inline-block px-3 text-lg font-bold text-center md:text-4xl text-sekunder">
                     AMBASSADOR DIGITAL
                 </span>
             </div>
@@ -39,7 +39,7 @@
         <a href="{{ route('special_offer.index') }}" class="flex items-center justify-center transition-all c4-izmir c4-border-cc-2 c4-image-rotate-right c4-gradient-bottom-right group h-52 md:h-96 hover:shadow-xl" tabindex="0" style="--primary-color: #B90027; --secondary-color: #021942; --image-opacity: .1;">
             <div class="flex flex-col items-center justify-center w-full h-full transition-all bg-white gap-y-4 md:gap-y-6 group-hover:opacity-0">
                 <i class="text-3xl md:text-6xl sm:text-4xl fa-solid fa-bullhorn text-sekunder"></i>
-                <span class="inline-block px-3 text-xl font-bold text-center md:text-4xl text-sekunder">
+                <span class="inline-block px-3 text-lg font-bold text-center md:text-4xl text-sekunder">
                     SPECIAL OFFERING ORBIT
                 </span>
             </div>
@@ -52,7 +52,7 @@
         <a href="{{ route('esport.index') }}" class="flex items-center justify-center transition-all c4-izmir c4-border-cc-1 c4-image-rotate-right c4-gradient-bottom-right group h-52 md:h-96 hover:shadow-xl" tabindex="0" style="--primary-color: #021942; --secondary-color: #B90027; --image-opacity: .1;">
             <div class="flex flex-col items-center justify-center w-full h-full transition-all gap-y-4 md:gap-y-6 bg-sekunder group-hover:opacity-0">
                 <i class="text-3xl md:text-6xl sm:text-4xl fa-solid fa-trophy"></i>
-                <span class="inline-block px-3 text-xl font-bold text-center text-white md:text-4xl">
+                <span class="inline-block px-3 text-lg font-bold text-center text-white md:text-4xl">
                     ESPORT COMPETITION
                 </span>
             </div>
