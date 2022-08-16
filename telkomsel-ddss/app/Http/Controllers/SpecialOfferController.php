@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\SpecialOffer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SpecialOfferController extends Controller
 {
@@ -14,7 +15,8 @@ class SpecialOfferController extends Controller
      */
     public function index()
     {
-        return view('offer.index');
+        $orbit = DB::table('produk_orbit')->select("*")->get();
+        return view('offer.index', compact('orbit'));
     }
 
     /**
@@ -35,7 +37,55 @@ class SpecialOfferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->asal == 'sekolah') {
+            $request->validate([
+                'npsn' => 'required|numeric',
+                'nama' => 'required',
+                'kelas' => 'required',
+                'telp' => 'required|numeric|digits_between:11,13',
+                'wa' => 'required|numeric|digits_between:11,13',
+                'jenis_orbit' => 'required'
+            ]);
+        } else if ($request->asal == 'non_sekolah') {
+            $request->validate([
+                'nama_instansi' => 'required',
+                'nama' => 'required',
+                'jabatan' => 'required',
+                'telp' => 'required|numeric|digits_between:11,13',
+                'wa' => 'required|numeric|digits_between:11,13',
+                'jenis_orbit' => 'required'
+            ]);
+        }
+
+        $count = DB::table('peserta_event')->where('telp', $request->telp)->where('kategori', 'Special Offer Orbit')->count();
+
+        if ($count > 0) {
+            return redirect('/')->with('error', 'Anda Sudah Mendaftar di Special Offer Orbit');
+        } else {
+            if ($request->asal == 'sekolah') {
+                $offer = DB::table('peserta_event')->insert([
+                    'npsn' => $request->npsn,
+                    'nama' => $request->nama,
+                    'kelas' => $request->kelas,
+                    'jenis_orbit' => $request->jenis_orbit,
+                    'telp' => $request->telp,
+                    'wa' => $request->wa,
+                    'kategori' => 'Special Offer Orbit',
+                ]);
+            } else if ($request->asal == 'non_sekolah') {
+                $offer = DB::table('peserta_event')->insert([
+                    'nama_instansi' => $request->nama_instansi,
+                    'nama' => $request->nama,
+                    'kelas' => $request->jabatan,
+                    'jenis_orbit' => $request->jenis_orbit,
+                    'telp' => $request->telp,
+                    'wa' => $request->wa,
+                    'kategori' => 'Special Offer Orbit',
+                ]);
+            }
+
+            return redirect('/')->with('success', 'Anda Berhasil Mendaftar di Special Offer Orbit');
+        }
     }
 
     /**

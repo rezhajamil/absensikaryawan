@@ -14,12 +14,14 @@
     </div>
     <div class="px-2 py-4 my-4 border-2 rounded-lg shadow-lg sm:px-6 sm:py-8 border-sekunder">
         <span class="text-2xl font-bold sm:text-4xl text-sekunder">Form Pendaftaran</span>
-        <form action="{{ route('ambassador_digital.store') }}" method="post">
+        <form action="{{ route('special_offer.store') }}" method="post">
             @csrf
+            <input type="hidden" name="asal" value="{{ request()->get('asal') }}">
             <div class="grid grid-cols-3 gap-6 mt-4 md:grid-cols-3">
+                @if (request()->get('asal')=='sekolah')
                 <div class="w-full col-span-full md:col-span-1">
                     <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="npsn" placeholder="NPSN" type="number" name="npsn" value="{{ old('npsn') }}">
-                    <span class="inline-block mt-1 text-sm underline transition-all cursor-pointer text-sekunder hover:text-black" x-on:click="search=!search"><i class="mr-1 text-sm fa-solid fa-magnifying-glass text-sekunder"></i>Cari Sekolah</span>
+                    <span class="inline-block mt-1 text-sm underline transition-all cursor-pointer text-sekunder hover:text-black" x-on:click="search=true"><i class="mr-1 text-sm fa-solid fa-magnifying-glass text-sekunder"></i>Cari Sekolah</span>
                     @error('npsn')
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
@@ -48,7 +50,63 @@
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <select name="jenis_orbit" id="jenis_orbit" class="w-full rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
+                        <option value="" selected disabled>Pilih Jenis Orbit</option>
+                        @foreach ($orbit as $data)
+                        <option value="{{ $data->nama }}" {{ old('jenis_orbit')==$data->nama?'selected':'' }}>{{ $data->nama }}</option>
+                        @endforeach
+                    </select>
+                    @error('jenis_orbit')
+                    <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
+                    @enderror
+                </div>
                 <button type="submit" class="col-span-3 px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>
+                @endif
+                @if(request()->get('asal')=='non_sekolah')
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="instansi" placeholder="Nama Instansi" type="text" name="instansi" value="{{ old('instansi') }}">
+                    @error('instansi')
+                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Lengkap" type="text" name="nama" value="{{ old('nama') }}">
+                    @error('nama')
+                    <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="jabatan" placeholder="Jabatan" type="text" name="jabatan" value="{{ old('jabatan') }}">
+                    @error('jabatan')
+                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
+                    @error('telp')
+                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
+                    @error('wa')
+                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <select name="jenis_orbit" id="jenis_orbit" class="w-full rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
+                        <option value="" selected disabled>Pilih Jenis Orbit</option>
+                        @foreach ($orbit as $data)
+                        <option value="{{ $data->nama }}" {{ old('jenis_orbit')==$data->nama?'selected':'' }}>{{ $data->nama }}</option>
+                        @endforeach
+                    </select>
+                    @error('jenis_orbit')
+                    <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
+                    @enderror
+                </div>
+                <button type="submit" class="col-span-3 px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>
+                @endif
             </div>
         </form>
     </div>

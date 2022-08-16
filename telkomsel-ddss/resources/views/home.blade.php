@@ -57,19 +57,20 @@
                 </span>
             </div>
             <figcaption class="px-3 c4-reveal-right">
-                <span class="text-xl font-bold text-center md:text-4xl w-fit">
+                <img src="{{ asset('images/logo-dg.jpg') }}" alt="Dunia Gaming" class="w-full h-full">
+                {{-- <span class="text-xl font-bold text-center md:text-4xl w-fit">
                     DAFTAR SEKARANG
-                </span>
+                </span> --}}
             </figcaption>
         </a>
     </div>
     <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-white" x-show="offer" x-transition>
         <i class="absolute z-10 text-3xl transition cursor-pointer text-premier fa-solid fa-xmark top-5 right-10 hover:text-sekunder" x-on:click="offer=false"></i>
-        <div class="flex flex-col w-full mx-4 overflow-hidden rounded-lg shadow-lg bg-premier sm:w-1/2">
-            <span class="inline-block w-full p-4 mb-4 text-lg font-bold text-center text-white capitalize">Dari mana asal anda?</span>
-            <div class="flex mx-auto my-4 gap-x-6">
-                <a href="{{ route('special_offer.index',['asal'=>'sekolah']) }}" class="px-4 py-2 text-white transition border-2 border-white bg-premier hover:bg-sekunder hover:border-sekunder">Sekolah</a>
-                <a href="{{ route('special_offer.index',['asal'=>'non_sekolah']) }}" class="px-4 py-2 text-white transition border-2 border-white bg-premier hover:bg-sekunder hover:border-sekunder">Sekolah</a>
+        <div class="flex flex-col w-full mx-4 overflow-hidden rounded-lg shadow-lg bg-premier sm:w-1/4">
+            <span class="inline-block w-full p-4 mb-2 text-lg font-bold text-center text-white capitalize">Dari mana asal anda?</span>
+            <div class="flex mx-auto my-2 mb-4 gap-x-6">
+                <a href="{{ route('special_offer.index',['asal'=>'sekolah']) }}" class="px-4 py-2 font-bold text-white transition border-2 border-white bg-premier hover:bg-sekunder hover:border-sekunder">Sekolah</a>
+                <a href="{{ route('special_offer.index',['asal'=>'non_sekolah']) }}" class="px-4 py-2 font-bold text-white transition border-2 border-white bg-premier hover:bg-sekunder hover:border-sekunder">Non Sekolah</a>
             </div>
         </div>
     </div>

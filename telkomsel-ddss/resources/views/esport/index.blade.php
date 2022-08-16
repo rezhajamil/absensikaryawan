@@ -6,15 +6,15 @@
         <div class="absolute inset-0 flex items-center justify-center w-full h-full transition opacity-0 bg-slate-800/70 group-hover:opacity-100">
             <i class="text-4xl text-white fa-solid fa-up-right-and-down-left-from-center"></i>
         </div>
-        <img src="{{ asset('images/banner-stage.png') }}" alt="Banner Stage" class="object-contain w-full">
+        <img src="{{ asset('images/banner-esport.png') }}" alt="Banner Ambassador" class="object-contain w-full">
     </div>
     <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-black/80" x-show="banner" x-transition>
-        <i class="absolute z-10 text-3xl text-white transition cursor-pointer fa-solid fa-xmark top-5 right-10 hover:text-premier" x-on:click="banner=false"></i>
-        <img src="{{ asset('images/banner-stage.png') }}" alt="Banner Stage" class="relative w-full px-4 py-8 sm:py-4 sm:h-full h-fit aspect-auto">
+        <i class="absolute z-10 text-3xl text-white transition cursor-pointer aspect-auto fa-solid fa-xmark top-5 right-10 hover:text-premier" x-on:click="banner=false"></i>
+        <img src="{{ asset('images/banner-esport.png') }}" alt="Banner Ambassador" class="relative w-full px-4 py-8 sm:py-4 sm:h-full h-fit aspect-auto">
     </div>
     <div class="px-2 py-4 my-4 border-2 rounded-lg shadow-lg sm:px-6 sm:py-8 border-sekunder">
         <span class="text-2xl font-bold sm:text-4xl text-sekunder">Form Pendaftaran</span>
-        <form action="{{ route('the_stage.store') }}" method="post">
+        <form action="{{ route('ambassador_digital.store') }}" method="post">
             @csrf
             <div class="grid grid-cols-3 gap-6 mt-4 md:grid-cols-3">
                 <div class="w-full col-span-full md:col-span-1">
@@ -37,14 +37,6 @@
                     @enderror
                 </div>
                 <div class="w-full col-span-full md:col-span-1">
-                    <select name="jenis" id="jenis" class="w-full rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
-                        <option value="" selected disabled>Pilih Jenis Lomba</option>
-                    </select>
-                    @error('jenis')
-                    <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="w-full col-span-full md:col-span-1">
                     <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
                     @error('telp')
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
@@ -56,10 +48,14 @@
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="w-full col-span-full">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Link Youtube" type="text" name="url" value="{{ old('url') }}">
-                    @error('url')
-                    <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                <div class="w-full col-span-full md:col-span-1">
+                    <select name="jenis" id="jenis" class="w-full rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
+                        <option value="" selected disabled>Pilih Jenis Lomba</option>
+                        <option value="Free Fire">Free Fire</option>
+
+                    </select>
+                    @error('jenis')
+                    <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
                     @enderror
                 </div>
                 <button type="submit" class="col-span-3 px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>

@@ -14,7 +14,7 @@ class EsportController extends Controller
      */
     public function index()
     {
-        //
+        return view('esport.index');
     }
 
     /**
@@ -35,7 +35,32 @@ class EsportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'npsn' => 'required|numeric',
+            'nama' => 'required',
+            'kelas' => 'required',
+            'jenis' => 'required',
+            'telp' => 'required|numeric|digits_between:11,13',
+            'wa' => 'required|numeric|digits_between:11,13',
+        ]);
+
+        $count = DB::table('peserta_event')->where('telp', $request->telp)->where('kategori', 'E-Sport Competition')->count();
+
+        if ($count > 0) {
+            return redirect('/')->with('error', 'Anda Sudah Mendaftar di E-Sport Competition');
+        } else {
+            $stage = DB::table('peserta_event')->insert([
+                'npsn' => $request->npsn,
+                'nama' => $request->nama,
+                'kelas' => $request->kelas,
+                'jenis' => $request->jenis,
+                'telp' => $request->telp,
+                'wa' => $request->wa,
+                'kategori' => 'E-Sport Competition',
+            ]);
+
+            return redirect('/')->with('success', 'Anda Berhasil Mendaftar di E-Sport Competition');
+        }
     }
 
     /**

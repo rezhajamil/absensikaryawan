@@ -34,7 +34,30 @@ class AmbassadorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'npsn' => 'required|numeric',
+            'nama' => 'required',
+            'kelas' => 'required',
+            'telp' => 'required|numeric|digits_between:11,13',
+            'wa' => 'required|numeric|digits_between:11,13',
+        ]);
+
+        $count = DB::table('peserta_event')->where('telp', $request->telp)->where('kategori', 'Ambassador Digital')->count();
+
+        if ($count > 0) {
+            return redirect('/')->with('error', 'Anda Sudah Mendaftar di The Stage');
+        } else {
+            $ambassador = DB::table('peserta_event')->insert([
+                'npsn' => $request->npsn,
+                'nama' => $request->nama,
+                'kelas' => $request->kelas,
+                'telp' => $request->telp,
+                'wa' => $request->wa,
+                'kategori' => 'Ambassador Digital',
+            ]);
+
+            return redirect('/')->with('success', 'Anda Berhasil Mendaftar di Ambassador Digital');
+        }
     }
 
     /**
