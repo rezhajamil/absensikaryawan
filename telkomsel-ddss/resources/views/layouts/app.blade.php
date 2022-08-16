@@ -35,6 +35,16 @@
             font-family: 'Telkomsel Batik';
         }
 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
     </style>
 </head>
 <body class="overflow-x-hidden">
