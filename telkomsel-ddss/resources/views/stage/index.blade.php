@@ -66,7 +66,7 @@
             </div>
         </form>
     </div>
-    <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-black/80" id="search" x-show="search" x-transition>
+    <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-black/80" style="display:none;" id="search" x-show="search" x-transition>
         <i class="absolute z-10 text-3xl text-white transition cursor-pointer fa-solid fa-xmark top-5 right-10 hover:text-premier" x-on:click="search=false"></i>
         <div class="flex flex-col w-full mx-4 overflow-hidden bg-white rounded-lg sm:w-1/2">
             <span class="inline-block w-full p-4 mb-4 text-lg font-bold text-center text-white bg-premier">Cari Sekolah</span>
