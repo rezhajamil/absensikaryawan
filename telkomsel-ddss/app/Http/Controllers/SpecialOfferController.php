@@ -48,7 +48,7 @@ class SpecialOfferController extends Controller
             ]);
         } else if ($request->asal == 'non_sekolah') {
             $request->validate([
-                'nama_instansi' => 'required',
+                'instansi' => 'required',
                 'nama' => 'required',
                 'jabatan' => 'required',
                 'telp' => 'required|numeric|digits_between:11,13',
