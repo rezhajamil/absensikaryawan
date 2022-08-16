@@ -14,7 +14,7 @@
     </div>
     <div class="px-2 py-4 my-4 border-2 rounded-lg shadow-lg sm:px-6 sm:py-8 border-sekunder">
         <span class="text-2xl font-bold sm:text-4xl text-sekunder">Form Pendaftaran</span>
-        <form action="{{ route('ambassador_digital.store') }}" method="post">
+        <form action="{{ route('esport.store') }}" method="post">
             @csrf
             <div class="grid grid-cols-3 gap-6 mt-4 md:grid-cols-3">
                 <div class="w-full col-span-full md:col-span-1">
