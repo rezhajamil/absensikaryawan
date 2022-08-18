@@ -64,7 +64,7 @@
             </figcaption>
         </a>
     </div>
-    <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-white" x-show="offer" x-transition>
+    <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-white" style="display: none" x-show="offer" x-transition>
         <i class="absolute z-10 text-3xl transition cursor-pointer text-premier fa-solid fa-xmark top-5 right-10 hover:text-sekunder" x-on:click="offer=false"></i>
         <div class="flex flex-col w-full mx-4 overflow-hidden rounded-lg shadow-lg bg-premier sm:w-1/4">
             <span class="inline-block w-full p-4 mb-2 text-lg font-bold text-center text-white capitalize">Dari mana asal anda?</span>
