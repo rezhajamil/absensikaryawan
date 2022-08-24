@@ -41,6 +41,7 @@ class SpecialOfferController extends Controller
             $request->validate([
                 'npsn' => 'required|numeric',
                 'nama' => 'required',
+                'email' => 'required|email',
                 'kelas' => 'required',
                 'telp' => 'required|numeric|digits_between:11,13',
                 'wa' => 'required|numeric|digits_between:11,13',
@@ -50,6 +51,7 @@ class SpecialOfferController extends Controller
             $request->validate([
                 'instansi' => 'required',
                 'nama' => 'required',
+                'email' => 'required|email',
                 'jabatan' => 'required',
                 'telp' => 'required|numeric|digits_between:11,13',
                 'wa' => 'required|numeric|digits_between:11,13',
@@ -66,6 +68,7 @@ class SpecialOfferController extends Controller
                 $offer = DB::table('peserta_event')->insert([
                     'npsn' => $request->npsn,
                     'nama' => $request->nama,
+                    'email' => $request->email,
                     'kelas' => $request->kelas,
                     'jenis_orbit' => $request->jenis_orbit,
                     'telp' => $request->telp,
@@ -76,6 +79,7 @@ class SpecialOfferController extends Controller
                 $offer = DB::table('peserta_event')->insert([
                     'nama_instansi' => $request->nama_instansi,
                     'nama' => $request->nama,
+                    'email' => $request->email,
                     'kelas' => $request->jabatan,
                     'jenis_orbit' => $request->jenis_orbit,
                     'telp' => $request->telp,

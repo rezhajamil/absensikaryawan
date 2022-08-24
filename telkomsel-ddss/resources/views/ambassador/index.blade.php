@@ -37,6 +37,12 @@
                     @enderror
                 </div>
                 <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="email" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
+                    @error('email')
+                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
                     <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
                     @error('telp')
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
@@ -89,10 +95,11 @@
                     $('#school-list').html(
                         data.map((data) => {
                             return `
-                                <div class="flex flex-col p-4 transition border-b-2 cursor-pointer school-item hover:bg-gray-500/50" npsn="${data.NPSN}">
-                                    <span class="font-bold text-sekunder">${data.NAMA_SEKOLAH}</span>
-                                    <span class="font-semibold text-tersier">${data.NPSN}</span>
-                                </div>
+                            <div class="flex flex-col p-4 transition border-b-2 cursor-pointer school-item hover:bg-gray-500/50" npsn="${data.NPSN}" x-on:click="search=false">
+
+                                <span class="font-bold text-sekunder">${data.NAMA_SEKOLAH}</span>
+                                <span class="font-semibold text-tersier">${data.NPSN}</span>
+                            </div>
                             `
                         })
                     )
@@ -100,7 +107,7 @@
 
                     $('.school-item').click(function() {
                         let npsn = $(this).attr('npsn');
-                        $('#search').hide();
+                        // $('#search').hide();
                         $('#npsn').val(npsn);
                     })
 
@@ -109,6 +116,7 @@
                     console.log('error', e);
                 }
             })
+
         }
     })
 

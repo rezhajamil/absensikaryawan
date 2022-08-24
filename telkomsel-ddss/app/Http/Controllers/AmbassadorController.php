@@ -38,6 +38,7 @@ class AmbassadorController extends Controller
         $request->validate([
             'npsn' => 'required|numeric',
             'nama' => 'required',
+            'email' => 'required|email',
             'kelas' => 'required',
             'telp' => 'required|numeric|digits_between:11,13',
             'wa' => 'required|numeric|digits_between:11,13',
@@ -51,6 +52,7 @@ class AmbassadorController extends Controller
             $ambassador = DB::table('peserta_event')->insert([
                 'npsn' => $request->npsn,
                 'nama' => $request->nama,
+                'email' => $request->email,
                 'kelas' => $request->kelas,
                 'telp' => $request->telp,
                 'wa' => $request->wa,

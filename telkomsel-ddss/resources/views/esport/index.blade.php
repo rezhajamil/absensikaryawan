@@ -36,27 +36,35 @@
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="w-full col-span-full md:col-span-1">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
-                    @error('telp')
-                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="w-full col-span-full md:col-span-1">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
-                    @error('wa')
-                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="w-full col-span-full md:col-span-1">
-                    <select name="jenis" id="jenis" class="w-full rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
-                        <option value="" selected disabled>Pilih Jenis Lomba</option>
-                        <option value="Free Fire">Free Fire</option>
+                <div class="grid w-full grid-cols-4 gap-6 col-span-full">
+                    <div class="w-full col-span-full md:col-span-1">
+                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="email" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
+                        @error('email')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="w-full col-span-full md:col-span-1">
+                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
+                        @error('telp')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="w-full col-span-full md:col-span-1">
+                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
+                        @error('wa')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="w-full col-span-full md:col-span-1">
+                        <select name="jenis" id="jenis" class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
+                            <option value="" selected disabled>Pilih Jenis Lomba</option>
+                            <option value="Free Fire">Free Fire</option>
 
-                    </select>
-                    @error('jenis')
-                    <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
-                    @enderror
+                        </select>
+                        @error('jenis')
+                        <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
                 <button type="submit" class="col-span-3 px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>
             </div>
@@ -86,7 +94,6 @@
 
         const findSchool = () => {
             let _token = $('meta[name="csrf-token"]').attr('content');
-
             $.ajax({
                 url: "{{ URL::to('/find_school') }}"
                 , method: "POST"
@@ -99,10 +106,11 @@
                     $('#school-list').html(
                         data.map((data) => {
                             return `
-                                <div class="flex flex-col p-4 transition border-b-2 cursor-pointer school-item hover:bg-gray-500/50" npsn="${data.NPSN}">
-                                    <span class="font-bold text-sekunder">${data.NAMA_SEKOLAH}</span>
-                                    <span class="font-semibold text-tersier">${data.NPSN}</span>
-                                </div>
+                            <div class="flex flex-col p-4 transition border-b-2 cursor-pointer school-item hover:bg-gray-500/50" npsn="${data.NPSN}" x-on:click="search=false">
+
+                                <span class="font-bold text-sekunder">${data.NAMA_SEKOLAH}</span>
+                                <span class="font-semibold text-tersier">${data.NPSN}</span>
+                            </div>
                             `
                         })
                     )
@@ -110,7 +118,7 @@
 
                     $('.school-item').click(function() {
                         let npsn = $(this).attr('npsn');
-                        $('#search').hide();
+                        // $('#search').hide();
                         $('#npsn').val(npsn);
                     })
 
@@ -119,6 +127,7 @@
                     console.log('error', e);
                 }
             })
+
         }
     })
 

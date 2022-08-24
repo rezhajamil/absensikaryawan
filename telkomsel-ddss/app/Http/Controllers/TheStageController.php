@@ -38,6 +38,7 @@ class TheStageController extends Controller
         $request->validate([
             'npsn' => 'required|numeric',
             'nama' => 'required',
+            'email' => 'required|email',
             'kelas' => 'required',
             'jenis' => 'required',
             'telp' => 'required|numeric|digits_between:11,13',
@@ -53,6 +54,7 @@ class TheStageController extends Controller
             $stage = DB::table('peserta_event')->insert([
                 'npsn' => $request->npsn,
                 'nama' => $request->nama,
+                'email' => $request->email,
                 'kelas' => $request->kelas,
                 'jenis' => $request->jenis,
                 'telp' => $request->telp,
