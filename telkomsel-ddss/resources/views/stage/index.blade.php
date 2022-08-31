@@ -72,6 +72,10 @@
                     <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
+                <div class="flex items-center w-full col-span-full">
+                    <input class="mr-2 border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" type="checkbox" name="agree" id="agree" required>
+                    <label for="agree" class="font-semibold text-sekunder">Saya menyetujui bahwa video saya akan ditayangkan di khalayak umum</label>
+                </div>
                 <button type="submit" class="col-span-3 px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>
             </div>
         </form>

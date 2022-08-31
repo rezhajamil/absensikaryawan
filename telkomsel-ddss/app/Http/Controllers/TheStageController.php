@@ -41,6 +41,7 @@ class TheStageController extends Controller
             'email' => 'required|email',
             'kelas' => 'required',
             'jenis' => 'required',
+            'agree' => 'required',
             'telp' => 'required|numeric|digits_between:11,13',
             'wa' => 'required|numeric|digits_between:11,13',
             'url' => 'required|url',
