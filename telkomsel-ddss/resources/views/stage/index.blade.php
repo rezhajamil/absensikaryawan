@@ -57,6 +57,10 @@
                 <div class="w-full col-span-full md:col-span-1">
                     <select name="jenis" id="jenis" class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
                         <option value="" selected disabled>Pilih Jenis Lomba</option>
+                        <option value="Musik">Musik</option>
+                        <option value="Dance">Dance</option>
+                        <option value="Science">Science</option>
+                        <option value="Kriya">Kriya</option>
                     </select>
                     @error('jenis')
                     <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
