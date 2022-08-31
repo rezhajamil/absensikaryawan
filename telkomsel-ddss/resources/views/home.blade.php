@@ -4,13 +4,13 @@
 <div class="w-full px-4 my-6 h-fit md:px-32">
     <div class="w-full overflow-hidden rounded-md h-fit">
         <iframe class="w-full h-96" src="https://www.youtube.com/embed/4R3lVzqoW-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <a href="https://skul.id/" target="_blank" class="flex items-center p-2 mx-auto mt-4 mb-6 font-bold uppercase transition duration-500 bg-white border-2 rounded sm:mb-8 sm:border-4 sm:px-4 sm:py-3 sm:text-lg hover:bg-premier group hover:text-white whitespace-nowrap border-premier text-premier w-fit gap-x-3">
+        {{-- <a href="https://skul.id/" target="_blank" class="flex items-center p-2 mx-auto mt-4 mb-6 font-bold uppercase transition duration-500 bg-white border-2 rounded sm:mb-8 sm:border-4 sm:px-4 sm:py-3 sm:text-lg hover:bg-premier group hover:text-white whitespace-nowrap border-premier text-premier w-fit gap-x-3">
             Kunjungi Disini
             <div class="p-2 transition duration-500 rounded group-hover:bg-white">
                 <img src="{{ asset('images/skulid-icon.svg') }}" alt="Skul.id" class="h-6 sm:h-8">
-            </div>
-        </a>
     </div>
+    </a> --}}
+</div>
 </div>
 
 <div class="py-4 my-6 bg-premier" x-data="{offer:false}">
@@ -79,6 +79,18 @@
                 <a href="{{ route('special_offer.index',['asal'=>'non_sekolah']) }}" class="px-4 py-2 font-bold text-white transition border-2 border-white bg-premier hover:bg-sekunder hover:border-sekunder">Non Sekolah</a>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="w-full px-4 my-6 h-fit md:px-32">
+    <div class="w-full overflow-hidden rounded-md h-fit">
+        <iframe class="w-full h-96" src="https://www.youtube.com/embed/4R3lVzqoW-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a href="https://skul.id/" target="_blank" class="flex items-center p-2 mx-auto mt-4 mb-6 font-bold uppercase transition duration-500 bg-white border-2 rounded sm:mb-8 sm:border-4 sm:px-4 sm:py-3 sm:text-lg hover:bg-premier group hover:text-white whitespace-nowrap border-premier text-premier w-fit gap-x-3">
+            Kunjungi Disini
+            <div class="p-2 transition duration-500 rounded group-hover:bg-white">
+                <img src="{{ asset('images/skulid-icon.svg') }}" alt="Skul.id" class="h-6 sm:h-8">
+            </div>
+        </a>
     </div>
 </div>
 
