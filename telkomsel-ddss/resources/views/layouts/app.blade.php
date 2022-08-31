@@ -47,7 +47,7 @@
 
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden bg-white">
     @yield('body')
     @yield('script')
 </body>
