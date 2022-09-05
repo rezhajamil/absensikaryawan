@@ -25,7 +25,7 @@
                     @enderror
                 </div>
                 <div class="w-full col-span-full md:col-span-1">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Lengkap" type="text" name="nama" value="{{ old('nama') }}">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Lengkap Peserta" type="text" name="nama" value="{{ old('nama') }}">
                     @error('nama')
                     <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
@@ -57,16 +57,22 @@
                 <div class="w-full col-span-full md:col-span-1">
                     <select name="jenis" id="jenis" class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
                         <option value="" selected disabled>Pilih Jenis Lomba</option>
-                        <option value="Musik">Musik</option>
-                        <option value="Dance">Dance</option>
-                        <option value="Science">Science</option>
-                        <option value="Kriya">Kriya</option>
+                        <option value="Musik" {{ old('jenis')=='Musik'?'selected':'' }}>Musik</option>
+                        <option value="Dance" {{ old('jenis')=='Dance'?'selected':'' }}>Dance</option>
+                        <option value="Science" {{ old('jenis')=='Science'?'selected':'' }}>Science</option>
+                        <option value="Kriya" {{ old('jenis')=='Kriya'?'selected':'' }}>Kriya</option>
                     </select>
                     @error('jenis')
                     <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="w-full col-span-full md:col-span-2">
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Tim" type="text" name="nama_tim" value="{{ old('nama_tim') }}">
+                    @error('nama_tim')
+                    <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
                     <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Link Youtube" type="text" name="url" value="{{ old('url') }}">
                     @error('url')
                     <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>

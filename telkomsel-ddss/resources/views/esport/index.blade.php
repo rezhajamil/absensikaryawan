@@ -16,7 +16,7 @@
         <span class="text-2xl font-bold sm:text-4xl text-sekunder">Form Pendaftaran</span>
         <form action="{{ route('esport.store') }}" method="post">
             @csrf
-            <div class="grid grid-cols-3 gap-6 mt-4 md:grid-cols-3">
+            <div class="grid grid-cols-4 gap-6 mt-4 md:grid-cols-4">
                 <div class="w-full col-span-full md:col-span-1">
                     <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="npsn" placeholder="NPSN" type="number" name="npsn" value="{{ old('npsn') }}">
                     <span class="inline-block mt-1 text-sm underline transition-all cursor-pointer text-sekunder hover:text-black" x-on:click="search=true"><i class="mr-1 text-sm fa-solid fa-magnifying-glass text-sekunder"></i>Cari Sekolah</span>
@@ -25,8 +25,14 @@
                     @enderror
                 </div>
                 <div class="w-full col-span-full md:col-span-1">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Lengkap" type="text" name="nama" value="{{ old('nama') }}">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Lengkap Peserta" type="text" name="nama" value="{{ old('nama') }}">
                     @error('nama')
+                    <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Nama Tim" type="text" name="nama_tim" value="{{ old('nama_tim') }}">
+                    @error('nama_tim')
                     <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
@@ -36,37 +42,38 @@
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="grid w-full grid-cols-4 gap-6 col-span-full">
-                    <div class="w-full col-span-full md:col-span-1">
-                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="email" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
-                        @error('email')
-                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    <div class="w-full col-span-full md:col-span-1">
-                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
-                        @error('telp')
-                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    <div class="w-full col-span-full md:col-span-1">
-                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
-                        @error('wa')
-                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    <div class="w-full col-span-full md:col-span-1">
-                        <select name="jenis" id="jenis" class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
-                            <option value="" selected disabled>Pilih Jenis Lomba</option>
-                            <option value="Free Fire">Free Fire</option>
-
-                        </select>
-                        @error('jenis')
-                        <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
-                        @enderror
-                    </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="email" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
+                    @error('email')
+                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
                 </div>
-                <button type="submit" class="col-span-3 px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
+                    @error('telp')
+                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
+                    @error('wa')
+                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-full md:col-span-1">
+                    <select name="jenis" id="jenis" class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder">
+                        <option value="" selected disabled>Pilih Jenis Lomba</option>
+                        <option value="Free Fire">Free Fire</option>
+
+                    </select>
+                    @error('jenis')
+                    <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                {{-- <div class="grid w-full grid-cols-4 gap-6 col-span-full">
+                </div> --}}
+                <button type="submit" class="px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded col-span-full bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>
             </div>
         </form>
     </div>

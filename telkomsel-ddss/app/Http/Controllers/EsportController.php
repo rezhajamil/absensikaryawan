@@ -39,6 +39,7 @@ class EsportController extends Controller
         $request->validate([
             'npsn' => 'required|numeric',
             'nama' => 'required',
+            'nama_tim' => 'required',
             'kelas' => 'required',
             'jenis' => 'required',
             'telp' => 'required|numeric|digits_between:11,13',
@@ -53,6 +54,7 @@ class EsportController extends Controller
             $stage = DB::table('peserta_event')->insert([
                 'npsn' => $request->npsn,
                 'nama' => $request->nama,
+                'nama_tim' => $request->nama_tim,
                 'kelas' => $request->kelas,
                 'jenis' => $request->jenis,
                 'telp' => $request->telp,
