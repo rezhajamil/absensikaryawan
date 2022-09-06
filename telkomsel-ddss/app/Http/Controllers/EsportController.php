@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Esport;
+use App\Rules\TelkomselNumber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -42,7 +43,7 @@ class EsportController extends Controller
             'nama_tim' => 'required',
             'kelas' => 'required',
             'jenis' => 'required',
-            'telp' => 'required|numeric|digits_between:11,13',
+            'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
             'wa' => 'required|numeric|digits_between:11,13',
         ]);
 

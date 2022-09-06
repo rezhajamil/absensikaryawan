@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SpecialOffer;
+use App\Rules\TelkomselNumber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,7 +44,7 @@ class SpecialOfferController extends Controller
                 'nama' => 'required',
                 'email' => 'required|email',
                 'kelas' => 'required',
-                'telp' => 'required|numeric|digits_between:11,13',
+                'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
                 'wa' => 'required|numeric|digits_between:11,13',
                 'jenis_orbit' => 'required'
             ]);
@@ -53,7 +54,7 @@ class SpecialOfferController extends Controller
                 'nama' => 'required',
                 'email' => 'required|email',
                 'jabatan' => 'required',
-                'telp' => 'required|numeric|digits_between:11,13',
+                'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
                 'wa' => 'required|numeric|digits_between:11,13',
                 'jenis_orbit' => 'required'
             ]);

@@ -46,6 +46,8 @@
                     <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
                     @error('telp')
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @else
+                    <span class="inline-block mt-1 text-sm italic text-sekunder">Pastikan nomor telepon benar karena akan dihubungi untuk Quiz</span>
                     @enderror
                 </div>
                 <div class="w-full col-span-full md:col-span-1">

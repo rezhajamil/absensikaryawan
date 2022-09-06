@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\TelkomselNumber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -40,7 +41,7 @@ class AmbassadorController extends Controller
             'nama' => 'required',
             'email' => 'required|email',
             'kelas' => 'required',
-            'telp' => 'required|numeric|digits_between:11,13',
+            'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
             'wa' => 'required|numeric|digits_between:11,13',
         ]);
 
