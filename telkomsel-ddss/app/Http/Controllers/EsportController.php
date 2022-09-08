@@ -60,6 +60,7 @@ class EsportController extends Controller
                 'kelas' => $request->kelas,
                 'jenis' => $request->jenis,
                 'telp' => $request->telp,
+                'email' => $request->email,
                 'wa' => $request->wa,
                 'kategori' => 'E-Sport Competition',
             ]);
