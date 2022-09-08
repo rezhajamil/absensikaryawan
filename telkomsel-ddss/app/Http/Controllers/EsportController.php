@@ -43,6 +43,7 @@ class EsportController extends Controller
             'nama_tim' => 'required',
             'kelas' => 'required',
             'jenis' => 'required',
+            'email' => 'required|email',
             'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
             'wa' => 'required|numeric|digits_between:11,13',
         ]);
