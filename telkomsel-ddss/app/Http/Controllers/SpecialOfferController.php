@@ -42,6 +42,7 @@ class SpecialOfferController extends Controller
             $request->validate([
                 'npsn' => 'required|numeric',
                 'nama' => 'required',
+                'alasan' => 'required',
                 'email' => 'required|email',
                 'kelas' => 'required',
                 'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
@@ -52,6 +53,7 @@ class SpecialOfferController extends Controller
             $request->validate([
                 'instansi' => 'required',
                 'nama' => 'required',
+                'alasan' => 'required',
                 'email' => 'required|email',
                 'jabatan' => 'required',
                 'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
@@ -74,6 +76,7 @@ class SpecialOfferController extends Controller
                     'jenis_orbit' => $request->jenis_orbit,
                     'telp' => $request->telp,
                     'wa' => $request->wa,
+                    'alasan' => $request->alasan,
                     'kategori' => 'Special Offer Orbit',
                 ]);
             } else if ($request->asal == 'non_sekolah') {
@@ -85,6 +88,7 @@ class SpecialOfferController extends Controller
                     'jenis_orbit' => $request->jenis_orbit,
                     'telp' => $request->telp,
                     'wa' => $request->wa,
+                    'alasan' => $request->alasan,
                     'kategori' => 'Special Offer Orbit',
                 ]);
             }

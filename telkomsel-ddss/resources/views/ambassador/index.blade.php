@@ -56,6 +56,12 @@
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
+                <div class="w-full col-span-full">
+                    <textarea name="alasan" id="alasan" cols="30" rows="3" class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Alasan Mengikuti Program Ini">{{ old('alasan') }}</textarea>
+                    @error('alasan')
+                    <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
                 <button type="submit" class="col-span-3 px-4 py-2 font-bold text-white uppercase transition-all border-2 rounded bg-sekunder hover:text-sekunder border-sekunder hover:bg-white ">Daftar</button>
             </div>
         </form>

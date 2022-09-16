@@ -39,6 +39,7 @@ class AmbassadorController extends Controller
         $request->validate([
             'npsn' => 'required|numeric',
             'nama' => 'required',
+            'alasan' => 'required',
             'email' => 'required|email',
             'kelas' => 'required',
             'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
@@ -57,6 +58,7 @@ class AmbassadorController extends Controller
                 'kelas' => $request->kelas,
                 'telp' => $request->telp,
                 'wa' => $request->wa,
+                'alasan' => $request->alasan,
                 'kategori' => 'Ambassador Digital',
             ]);
 

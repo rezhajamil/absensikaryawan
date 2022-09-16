@@ -43,6 +43,7 @@ class EsportController extends Controller
             'nama_tim' => 'required',
             'kelas' => 'required',
             'jenis' => 'required',
+            'alasan' => 'required',
             'email' => 'required|email',
             'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
             'wa' => 'required|numeric|digits_between:11,13',
@@ -62,6 +63,7 @@ class EsportController extends Controller
                 'telp' => $request->telp,
                 'email' => $request->email,
                 'wa' => $request->wa,
+                'alasan' => $request->alasan,
                 'kategori' => 'E-Sport Competition',
             ]);
 

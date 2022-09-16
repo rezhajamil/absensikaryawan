@@ -44,6 +44,7 @@ class TheStageController extends Controller
             'kelas' => 'required',
             'jenis' => 'required',
             'agree' => 'required',
+            'alasan' => 'required',
             'telp' => 'required|numeric|digits_between:11,13',
             'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
             'wa' => 'required|numeric|digits_between:11,13',
@@ -64,6 +65,7 @@ class TheStageController extends Controller
                 'jenis' => $request->jenis,
                 'telp' => $request->telp,
                 'wa' => $request->wa,
+                'alasan' => $request->alasan,
                 'youtube' => $request->url,
                 'kategori' => 'The Stage',
             ]);

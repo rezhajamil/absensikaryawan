@@ -80,6 +80,12 @@
                     <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
+                <div class="w-full col-span-full">
+                    <textarea name="alasan" id="alasan" cols="30" rows="3" class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Alasan Mengikuti Program Ini">{{ old('alasan') }}</textarea>
+                    @error('alasan')
+                    <span class="block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                    @enderror
+                </div>
                 <div class="flex items-center w-full col-span-full">
                     <input class="mr-2 border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" type="checkbox" name="agree" id="agree" required>
                     <label for="agree" class="font-semibold text-sekunder">Saya menyetujui bahwa video saya akan ditayangkan di khalayak umum</label>
