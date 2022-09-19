@@ -63,7 +63,7 @@
                 </span>
             </div>
             <figcaption class="px-3 c4-reveal-right">
-                <img src="{{ asset('images/logo-dg.jpg') }}" alt="Dunia Gaming" class="w-full h-full">
+                <img src="{{ asset('images/logo-esport.png') }}" alt="Dunia Gaming" class="w-full h-full">
                 {{-- <span class="text-xl font-bold text-center md:text-4xl w-fit">
                     DAFTAR SEKARANG
                 </span> --}}
