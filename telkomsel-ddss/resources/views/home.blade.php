@@ -62,8 +62,9 @@
                     ESPORT COMPETITION
                 </span>
             </div>
-            <figcaption class="px-3 c4-reveal-right">
-                <img src="{{ asset('images/logo-esport.png') }}" alt="Dunia Gaming" class="w-full h-full">
+            <figcaption class="c4-reveal-right">
+                <img src="{{ asset('images/logo-esport.png') }}" alt="Dunia Gaming" class="w-full h-full transform scale-150" style="object-fit: contain">
+                {{-- <img src="{{ asset('images/logo-esport-small.png') }}" alt="Dunia Gaming" class="block w-full h-full sm:hidden"> --}}
                 {{-- <span class="text-xl font-bold text-center md:text-4xl w-fit">
                     DAFTAR SEKARANG
                 </span> --}}
@@ -86,7 +87,7 @@
     <div class="w-full overflow-hidden rounded-md h-fit">
         <iframe class="w-full h-96" src="https://www.youtube.com/embed/4R3lVzqoW-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <a href="https://skul.id/" target="_blank" class="flex items-center p-2 mx-auto mt-4 mb-6 font-bold uppercase transition duration-500 bg-white border-2 rounded sm:mb-8 sm:border-4 sm:px-4 sm:py-3 sm:text-lg hover:bg-premier group hover:text-white whitespace-nowrap border-premier text-premier w-fit gap-x-3">
-            Kunjungi Disini
+            Kunjungi Di Sini
             <div class="p-2 transition duration-500 rounded group-hover:bg-white">
                 <img src="{{ asset('images/skulid-icon.svg') }}" alt="Skul.id" class="h-6 sm:h-8">
             </div>
