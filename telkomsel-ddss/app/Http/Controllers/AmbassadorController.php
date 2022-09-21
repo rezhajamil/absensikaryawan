@@ -40,6 +40,7 @@ class AmbassadorController extends Controller
             'npsn' => 'required|numeric',
             'nama' => 'required',
             'alasan' => 'required',
+            'instagram' => 'required',
             'email' => 'required|email',
             'kelas' => 'required',
             'telp' => ['required', 'numeric', 'digits_between:11,13', new TelkomselNumber],
@@ -49,11 +50,12 @@ class AmbassadorController extends Controller
         $count = DB::table('peserta_event')->where('telp', $request->telp)->where('kategori', 'Ambassador Digital')->count();
 
         if ($count > 0) {
-            return redirect('/')->with('error', 'Anda Sudah Mendaftar di The Stage');
+            return redirect('/')->with('error', 'Anda Sudah Mendaftar di Ambassador Digital');
         } else {
             $ambassador = DB::table('peserta_event')->insert([
                 'npsn' => $request->npsn,
                 'nama' => $request->nama,
+                'instagram' => $request->instagram,
                 'email' => $request->email,
                 'kelas' => $request->kelas,
                 'telp' => $request->telp,

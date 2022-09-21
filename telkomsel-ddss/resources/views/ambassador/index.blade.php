@@ -36,25 +36,35 @@
                     <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="w-full col-span-full md:col-span-1">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="email" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
-                    @error('email')
-                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="w-full col-span-full md:col-span-1">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
-                    @error('telp')
-                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                    @else
-                    <span class="inline-block mt-1 text-sm italic text-sekunder">Pastikan nomor telepon benar karena akan dihubungi untuk Quiz</span>
-                    @enderror
-                </div>
-                <div class="w-full col-span-full md:col-span-1">
-                    <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
-                    @error('wa')
-                    <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
-                    @enderror
+                <div class="grid grid-cols-3 gap-6 mt-4 md:grid-cols-4 col-span-full">
+                    <div class="w-full col-span-full md:col-span-1">
+                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="instagram" placeholder="Instagram" type="text" name="instagram" value="{{ old('instagram') }}">
+                        @error('instagram')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @else
+                        <span class="inline-block mt-1 text-sm italic text-sekunder">Contoh : @akun_instagram</span>
+                        @enderror
+                    </div>
+                    <div class="w-full col-span-full md:col-span-1">
+                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="email" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
+                        @error('email')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="w-full col-span-full md:col-span-1">
+                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="telp" placeholder="Nomor Telepon (081234567890)" type="number" name="telp" value="{{ old('telp') }}">
+                        @error('telp')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @else
+                        <span class="inline-block mt-1 text-sm italic text-sekunder">Pastikan nomor telepon benar karena akan dihubungi untuk Quiz</span>
+                        @enderror
+                    </div>
+                    <div class="w-full col-span-full md:col-span-1">
+                        <input class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" id="wa" placeholder="Nomor Whatsapp (081234567890)" type="number" name="wa" value="{{ old('wa') }}">
+                        @error('wa')
+                        <span class="inline-block mt-1 text-sm italic text-premier">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
                 <div class="w-full col-span-full">
                     <textarea name="alasan" id="alasan" cols="30" rows="3" class="w-full border-2 rounded outline-2 outline-sekunder ring-sekunder border-sekunder" placeholder="Alasan Mengikuti Program Ini">{{ old('alasan') }}</textarea>
