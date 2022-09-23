@@ -40,7 +40,7 @@ class SpecialOfferController extends Controller
     {
         if ($request->asal == 'sekolah') {
             $request->validate([
-                'npsn' => 'required|numeric',
+                'npsn' => 'required|numeric|digits:8',
                 'nama' => 'required',
                 'alasan' => 'required',
                 'email' => 'required|email',

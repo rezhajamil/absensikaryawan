@@ -38,7 +38,7 @@ class EsportController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'npsn' => 'required|numeric',
+            'npsn' => 'required|numeric|digits:8',
             'nama' => 'required',
             'nama_tim' => 'required',
             'kelas' => 'required',

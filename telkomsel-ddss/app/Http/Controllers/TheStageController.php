@@ -37,7 +37,7 @@ class TheStageController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'npsn' => 'required|numeric',
+            'npsn' => 'required|numeric|digits:8',
             'nama' => 'required',
             'nama_tim' => 'required',
             'email' => 'required|email',
