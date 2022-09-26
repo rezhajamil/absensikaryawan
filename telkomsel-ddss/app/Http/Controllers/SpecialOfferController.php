@@ -81,7 +81,7 @@ class SpecialOfferController extends Controller
                 ]);
             } else if ($request->asal == 'non_sekolah') {
                 $offer = DB::table('peserta_event')->insert([
-                    'nama_instansi' => $request->nama_instansi,
+                    'nama_instansi' => $request->instansi,
                     'nama' => $request->nama,
                     'email' => $request->email,
                     'kelas' => $request->jabatan,
