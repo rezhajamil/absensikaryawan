@@ -17,7 +17,8 @@ class PesertaController extends Controller
         $stage = DB::select("SELECT * FROM peserta_event a LEFT JOIN Data_Sekolah_Sumatera b on a.npsn=b.NPSN WHERE a.kategori='The Stage' ORDER BY b.NAMA_SEKOLAH,a.nama");
         $ambassador = DB::select("SELECT * FROM peserta_event a LEFT JOIN Data_Sekolah_Sumatera b on a.npsn=b.NPSN WHERE a.kategori='Ambassador Digital' ORDER BY b.NAMA_SEKOLAH,a.nama");
         $offer = DB::select("SELECT * FROM peserta_event a LEFT JOIN Data_Sekolah_Sumatera b on a.npsn=b.NPSN WHERE a.kategori='Special Offer Orbit' ORDER BY b.NAMA_SEKOLAH,a.nama_instansi,a.nama");
-        return view('peserta.index', compact('stage', 'ambassador', 'offer'));
+        $esport = DB::select("SELECT * FROM peserta_event a LEFT JOIN Data_Sekolah_Sumatera b on a.npsn=b.NPSN WHERE a.kategori='E-Sport Competition' ORDER BY b.NAMA_SEKOLAH,a.nama");
+        return view('peserta.index', compact('stage', 'ambassador', 'offer', 'esport'));
     }
 
     /**

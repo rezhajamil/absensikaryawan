@@ -27,7 +27,7 @@
                 <tr class="hover:bg-gray-200">
                     <td class="p-2 font-bold text-gray-700 border-b">{{ $key+1 }}</td>
                     <td class="p-2 text-gray-700 border-b sekolah">{!! $data->NAMA_SEKOLAH??'<i class="text-sm text-slate-500">Data Sekolah Tidak Ditemukan</i>' !!}</td>
-                    <td class="p-2 text-gray-700 border-b nama">{{ ucwords($data->nama) }}</td>
+                    <td class="p-2 text-gray-700 border-b nama">{{ ucwords(strtolower($data->nama)) }}</td>
                     <td class="p-2 text-gray-700 border-b tim">{{ $data->nama_tim }}</td>
                     <td class="p-2 text-gray-700 border-b lulus">
                         @if($data->layak=='1')
@@ -60,7 +60,7 @@
                 <tr class="hover:bg-gray-200">
                     <td class="p-2 font-bold text-gray-700 border-b">{{ $key+1 }}</td>
                     <td class="p-2 text-gray-700 border-b sekolah">{!! $data->NAMA_SEKOLAH??'<i class="text-sm text-slate-500">Data Sekolah Tidak Ditemukan</i>' !!}</td>
-                    <td class="p-2 text-gray-700 border-b nama">{{ ucwords($data->nama) }}</td>
+                    <td class="p-2 text-gray-700 border-b nama">{{ ucwords(strtolower($data->nama)) }}</td>
                     <td class="p-2 text-gray-700 border-b instagram">{{ $data->instagram }}</td>
                 </tr>
                 @endforeach
@@ -78,6 +78,7 @@
                     <th class="p-2 text-sm font-bold text-center text-gray-100 uppercase bg-premier">No.</th>
                     <th class="p-2 text-sm font-bold text-center text-gray-100 uppercase bg-premier">Sekolah/Instansi</th>
                     <th class="p-2 text-sm font-bold text-center text-gray-100 uppercase bg-premier">Nama</th>
+                    <th class="p-2 text-sm font-bold text-center text-gray-100 uppercase bg-premier">Jenis Orbit</th>
                 </tr>
             </thead>
             <tbody class="max-h-screen overflow-y-auto">
@@ -91,7 +92,36 @@
                         {{ ucwords($data->nama_instansi) }}
                         @endif
                     </td>
-                    <td class="p-2 text-gray-700 border-b nama">{{ ucwords($data->nama) }}</td>
+                    <td class="p-2 text-gray-700 border-b nama">{{ ucwords(strtolower($data->nama)) }}</td>
+                    <td class="p-2 text-gray-700 border-b jenis">{{ $data->jenis_orbit }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="px-2 my-12 sm:px-8" id="esport-container" style="display: none">
+    <span class="inline-block w-full text-4xl text-center text-premier font-batik">E-Sport Competition</span>
+    <div class="max-w-full mx-auto my-8 overflow-x-auto bg-white rounded-md shadow w-fit">
+        <table class="overflow-auto text-left border-collapse w-fit">
+            <thead class="border-b">
+                <tr>
+                    <th class="p-2 text-sm font-bold text-center text-gray-100 uppercase bg-premier">No.</th>
+                    <th class="p-2 text-sm font-bold text-center text-gray-100 uppercase bg-premier">Sekolah</th>
+                    <th class="p-2 text-sm font-bold text-center text-gray-100 uppercase bg-premier">Nama</th>
+                    <th class="p-2 text-sm font-bold text-center text-gray-100 uppercase bg-premier">Tim</th>
+                </tr>
+            </thead>
+            <tbody class="max-h-screen overflow-y-auto">
+                @foreach ($esport as $key=>$data)
+                <tr class="hover:bg-gray-200">
+                    <td class="p-2 font-bold text-gray-700 border-b">{{ $key+1 }}</td>
+                    <td class="p-2 text-gray-700 border-b sekolah">
+                        {!! $data->NAMA_SEKOLAH??'<i class="text-sm text-slate-500">Data Sekolah Tidak Ditemukan</i>' !!}
+                    </td>
+                    <td class="p-2 text-gray-700 border-b nama">{{ ucwords(strtolower($data->nama)) }}</td>
+                    <td class="p-2 text-gray-700 border-b jenis">{{ $data->nama_tim }}</td>
                 </tr>
                 @endforeach
             </tbody>
@@ -111,18 +141,26 @@
                     $("#the-stage-container").show();
                     $("#ambassador-container").hide();
                     $("#offer-container").hide();
+                    $("#esport-container").hide();
                     break;
                 case 'ambassador':
                     $("#the-stage-container").hide();
                     $("#ambassador-container").show();
                     $("#offer-container").hide();
+                    $("#esport-container").hide();
                     break;
                 case 'offer':
                     $("#the-stage-container").hide();
                     $("#ambassador-container").hide();
                     $("#offer-container").show();
+                    $("#esport-container").hide();
                     break;
-
+                case 'esport':
+                    $("#the-stage-container").hide();
+                    $("#ambassador-container").hide();
+                    $("#offer-container").hide();
+                    $("#esport-container").show();
+                    break;
                 default:
                     break;
             }
