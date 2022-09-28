@@ -31,16 +31,28 @@
                     <td class="p-2 text-gray-700 border-b tim">{{ $data->nama_tim }}</td>
                     <td class="p-2 text-gray-700 border-b lulus">
                         @if($data->layak=='1')
-                        <span class="font-semibold text-green-600 whitespace-nowrap">Lulus</span>
-                        @else($data->layak=='0')
-                        <span class="font-semibold text-red-600 whitespace-nowrap">Tidak Lulus</span>
+                        <span class="font-semibold text-green-600 cursor-pointer select-none whitespace-nowrap grade" data-target="ket{{ $data->id }}">Lulus</span>
+                        @else
+                        @if($data->layak=='0')
+                        <span class="font-semibold text-red-600 cursor-pointer select-none whitespace-nowrap grade" data-target="ket{{ $data->id }}">Tidak Lulus</span>
+                        @else
+                        <span class="font-semibold text-gray-400 cursor-pointer select-none whitespace-nowrap grade" data-target="ket{{ $data->id }}">Belum Dinilai</span>
+                        @endif
                         @endif
                     </td>
                 </tr>
+                <div class="fixed inset-0 flex items-center justify-center grade_modal bg-black/60" id="ket{{ $data->id }}" style="display: none">
+                    <div class="pb-4 overflow-hidden bg-white rounded-lg w-fit">
+                        <span class="inline-block w-full px-8 py-4 text-2xl font-bold text-center text-white border-b bg-sekunder">Keterangan</span>
+                        <p class="px-4 mt-4 ">{!! $data->keterangan??'Belum Dinilai' !!}</p>
+
+                    </div>
+                </div>
                 @endforeach
             </tbody>
         </table>
     </div>
+
 </div>
 
 <div class="px-2 my-12 sm:px-8" id="ambassador-container" style="display: none">
@@ -164,8 +176,18 @@
                 default:
                     break;
             }
-        })
-    })
+        });
+
+        $(".grade").on("click", function() {
+            let target = $(this).attr("data-target");
+            $(`#${target}`).show();
+        });
+
+        $(".grade_modal").on("click", function() {
+            $(this).hide();
+        });
+
+    });
 
 </script>
 @endsection
