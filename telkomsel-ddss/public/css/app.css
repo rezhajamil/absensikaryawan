@@ -824,6 +824,9 @@ select {
 .grid {
   display: grid;
 }
+.list-item {
+  display: list-item;
+}
 .hidden {
   display: none;
 }
@@ -898,6 +901,9 @@ select {
 .w-1\/2 {
   width: 50%;
 }
+.w-screen {
+  width: 100vw;
+}
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -914,9 +920,6 @@ select {
 }
 .w-6 {
   width: 1.5rem;
-}
-.w-screen {
-  width: 100vw;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -1030,6 +1033,10 @@ select {
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
+}
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1145,10 +1152,6 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
-.border-b-gray-200 {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1171,6 +1174,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(185 0 39 / var(--tw-bg-opacity));
 }
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
 .bg-black\/60 {
   background-color: rgb(0 0 0 / 0.6);
 }
@@ -1181,13 +1188,6 @@ select {
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
-}
-.bg-black\/50 {
-  background-color: rgb(0 0 0 / 0.5);
-}
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 .fill-current {
   fill: currentColor;
@@ -1241,6 +1241,10 @@ select {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1249,16 +1253,11 @@ select {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
 .pt-8 {
   padding-top: 2rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
 }
 .pt-6 {
   padding-top: 1.5rem;
@@ -1283,9 +1282,6 @@ select {
 }
 .pb-1 {
   padding-bottom: 0.25rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
 }
 .text-left {
   text-align: left;
@@ -1339,6 +1335,9 @@ select {
 }
 .font-bold {
   font-weight: 700;
+}
+.font-extrabold {
+  font-weight: 800;
 }
 .uppercase {
   text-transform: uppercase;
