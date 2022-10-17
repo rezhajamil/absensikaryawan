@@ -10,7 +10,7 @@
     </div>
     <div class="fixed inset-0 z-20 flex items-center justify-center w-full h-full overflow-auto bg-black/80" x-show="banner" x-transition>
         <i class="absolute z-10 text-3xl text-white transition cursor-pointer aspect-auto fa-solid fa-xmark top-5 right-10 hover:text-premier" x-on:click="banner=false"></i>
-        <img src="{{ asset('images/banner-esport.jpg') }}" alt="Banner Ambassador" class="relative w-full px-4 py-8 sm:py-4 sm:h-full h-fit aspect-auto">
+        <img src="{{ asset('images/banner-esport.jpg') }}" alt="Banner Ambassador" class="relative w-full px-4 py-8 sm:py-4 sm:h-full h-fit">
     </div>
     <div class="px-2 py-4 my-4 border-2 rounded-lg shadow-lg sm:px-6 sm:py-8 border-sekunder">
         <span class="text-2xl font-bold sm:text-4xl text-sekunder">Form Pendaftaran</span>
