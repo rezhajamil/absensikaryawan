@@ -68,6 +68,7 @@ class TheStageController extends Controller
                 'alasan' => $request->alasan,
                 'youtube' => $request->url,
                 'kategori' => 'The Stage',
+                'event' => 2,
             ]);
 
             return redirect('/')->with('success', 'Anda Berhasil Mendaftar di The Stage');

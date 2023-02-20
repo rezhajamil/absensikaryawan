@@ -8,9 +8,9 @@
     {{-- <link rel="canonical" href="{{ $page->getUrl() }}"> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="description" content="DUNIA DIGITAL SEKOLAH SUMUT">
+    <meta name="description" content="PARADE KAMPUS DAN SEKOLAH SUMATERA">
 
-    <title>DUNIA DIGITAL SEKOLAH SUMUT </title>
+    <title>PARADE KAMPUS DAN SEKOLAH SUMATERA </title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/izmir.css') }}">
     {{-- <link rel="icon" href="{{ asset('images/mosque.svg') }}"> --}}
